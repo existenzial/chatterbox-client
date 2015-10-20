@@ -35,7 +35,7 @@ app.addMessage = function(){
 }
 
 app.addRoom = function(){
-  $('#rooms').html('div')
+  $('#roomSelect').html('<option>')
 };
 
 // });
