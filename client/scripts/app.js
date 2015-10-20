@@ -2,11 +2,11 @@
 var app = {};
 
 app.init = function(){ 
+  app.fetch();
   app.addFriend();
   app.handleSubmit();
 
 };
-
 app.send = function(message){
   $.ajax({
     type: "POST",
@@ -27,9 +27,16 @@ app.fetch = function(){
     type:"GET",
     url: this.url,
     data: JSON.stringify(),
+    success: function(){
+      console.log("Successful retrieval")
+    },
+    error: function(){
+      console.log("Sorry, try again")
+    }
   });
 };
-// $(document).ready(function (){
+
+
 
 app.clearMessages = function() {
   $('#chats').html('');
@@ -45,13 +52,14 @@ app.addRoom = function(){
 };
 
 app.addFriend = function(){
-  $('#main').on('click', function(){
-  $('.username').find();  
-  });
+  // $('#main').on('click', function(){
+  // $('.username').find();  
+  // });
 };
 
 app.handleSubmit = function (message){
-  $('#send .submit').submit(function(){
-    message = $(message).val();
-  })
+  // $('#send .submit').submit(function(){
+  //   message = $(message).val();
+  // })
 }
+app.init();
