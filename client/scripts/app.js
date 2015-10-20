@@ -1,7 +1,12 @@
 // YOUR CODE HERE:
 var app = {};
 
-app.init = function(){};
+app.init = function(){ 
+  app.addFriend();
+  app.handleSubmit();
+
+};
+
 app.send = function(message){
   $.ajax({
     type: "POST",
@@ -30,12 +35,23 @@ app.clearMessages = function() {
   $('#chats').html('');
 }
 
-app.addMessage = function(){
+app.addMessage = function(userName){
   $('#chats').html('<div>');
+  userName = this.userName;
 }
 
 app.addRoom = function(){
   $('#roomSelect').html('<option>')
 };
 
-// });
+app.addFriend = function(){
+  $('#main').on('click', function(){
+  $('.username').find();  
+  });
+};
+
+app.handleSubmit = function (message){
+  $('#send .submit').submit(function(){
+    message = $(message).val();
+  })
+}
