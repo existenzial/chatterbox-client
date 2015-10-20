@@ -24,12 +24,18 @@ app.fetch = function(){
     data: JSON.stringify(),
   });
 };
+// $(document).ready(function (){
 
 app.clearMessages = function() {
-  $('div#chats').on("click", function(){
-    console.log(this);
-    $(this).remove();
-
-  })
-
+  $('#chats').html('');
 }
+
+app.addMessage = function(){
+  $('#chats').html('<div>');
+}
+
+app.addRoom = function(){
+  $('#rooms').html('div')
+};
+
+// });
